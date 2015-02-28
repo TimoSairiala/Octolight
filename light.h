@@ -18,18 +18,21 @@ class Light {
   private:
     void WriteOutput( );
     
-    const static int _backLightPin = 3;
-    const static int _redPin = 5;
-    const static int _greenPin = 6;
-    const static int _bluePin = 9;
     const static int _buttonPin = 2;
+    const static int _backLightPin = 3;
+    const static int _buttonBackLightPin = 5;
+    const static int _redPin = 9;
+    const static int _greenPin = 10;
+    const static int _bluePin = 11;
     const static int _statusPin = 13;
     
-    const static int _backLightNormal = 25;
+    const static int _backLightNormal = 0;
+    const static int _buttonBackLightNormal = 255;
     const static int _redNormal = 0;
     const static int _greenNormal = 0;
     const static int _blueNormal = 255;
 
+    int _buttonBackLightCurrent;
     int _backLightCurrent;
     int _redCurrent;
     int _greenCurrent;

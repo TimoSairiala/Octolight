@@ -7,7 +7,6 @@ void setup() {
   Serial.begin( 9600 );
   Serial.println( "Welcome to Oktovalo" );
   oktovalo = new Light( );
-  digitalWrite( 2, LOW );
   // interrupt 0 equals to input pin 2 on uno and mini
   // see http://arduino.cc/en/Reference/attachInterrupt
   attachInterrupt( 0, lightsOn, CHANGE );
