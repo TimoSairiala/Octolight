@@ -91,12 +91,12 @@ void Light::WriteOutput( ) {
   Serial.print( " green: " );
   Serial.println( this->_greenCurrent );
   */
-  digitalWrite( this->_backLightPin, this->_backLightCurrent );
-  digitalWrite( this->_buttonBackLightPin, this->_buttonBackLightCurrent );
-  digitalWrite( this->_redPin, this->_redCurrent );
-  digitalWrite( this->_bluePin, this->_blueCurrent );
-  digitalWrite( this->_greenPin, this->_greenCurrent );
-  digitalWrite( this->_statusPin, Active( ) );
+  analogWrite( this->_backLightPin, this->_backLightCurrent );
+  analogWrite( this->_buttonBackLightPin, this->_buttonBackLightCurrent );
+  analogWrite( this->_redPin, this->_redCurrent );
+  analogWrite( this->_bluePin, this->_blueCurrent );
+  analogWrite( this->_greenPin, this->_greenCurrent );
+  analogWrite( this->_statusPin, Active( ) );
 }
 
 bool Light::ButtonPressed( ) {
