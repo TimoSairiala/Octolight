@@ -1,12 +1,14 @@
 #include "light.h"
 
 volatile int switchLightsOn = 0;
-Light *oktovalo;
+Light *mainlight;
+Floor *floorlight;
 
 void setup() {
   Serial.begin( 9600 );
-  Serial.println( "Welcome to Oktovalo" );
-  oktovalo = new Light( );
+  Serial.println( "Welcome to Octolight" );
+  mainlight = new Light( );
+  floorlight = new Floor( );
   // interrupt 0 equals to input pin 2 on uno and mini
   // see http://arduino.cc/en/Reference/attachInterrupt
   attachInterrupt( 0, lightsOn, CHANGE );
@@ -16,12 +18,12 @@ void setup() {
 void loop() {
   if( switchLightsOn ) {
     switchLightsOn = 0;
-    Serial.println("oktovalo main looper Switch lights on");
-    oktovalo->SwitchOn( );
+    Serial.println("octolight main looper Switch lights on");
+    mainlight->SwitchOn( );
+    floorlight->SwitchOn( );
   }
-  if( oktovalo->Active( ) ) {
-    oktovalo->Update( );
-  }
+  if( mainlight->Active( ) ) mainlight->Update( );
+  if( floorlight->Active( ) ) floorlight->Update( );
 }
 
 void lightsOn( ) {
