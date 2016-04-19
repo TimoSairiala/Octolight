@@ -39,7 +39,7 @@ class Light {
     int _blueCurrent;
 
     unsigned long _timeOfLastUpdate;
-    const static long _updateDelay = 50;
+    const static long _updateDelay = 100;
     const static long _delayBeforeDimming = 10000;
 };
 

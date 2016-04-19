@@ -33,15 +33,14 @@ void Light::SwitchOn( ) {
 
 void Light::Update( ) {
   unsigned long currentMillis = millis();
-
-/*  Serial.print( "Active: " );
+/*
+  Serial.print( "Active: " );
   Serial.print( Active( ) );
   Serial.print( " currentMillis: " );
   Serial.print( currentMillis );
   Serial.print( " lastUpdate: " );
   Serial.println( this->_timeOfLastUpdate );
-  */
-
+*/
   if( Active( ) &&
     ((unsigned long)(currentMillis - this->_timeOfLastUpdate ) >= this->_updateDelay ) ) {
     if( this->_backLightCurrent > this->_backLightNormal ) this->_backLightCurrent --;
@@ -82,7 +81,7 @@ Serial.println( this->_blueCurrent ); */
 }
 
 void Light::WriteOutput( ) {
-/*  Serial.print( "backlight: " );
+  Serial.print( "backlight: " );
   Serial.print( this->_backLightCurrent );
   Serial.print( " red: " );
   Serial.print( this->_redCurrent );
@@ -90,7 +89,7 @@ void Light::WriteOutput( ) {
   Serial.print( this->_blueCurrent );
   Serial.print( " green: " );
   Serial.println( this->_greenCurrent );
-  */
+  
   analogWrite( this->_backLightPin, this->_backLightCurrent );
   analogWrite( this->_buttonBackLightPin, this->_buttonBackLightCurrent );
   analogWrite( this->_redPin, this->_redCurrent );
