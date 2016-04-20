@@ -40,7 +40,7 @@ class Light {
 
     unsigned long _timeOfLastUpdate;
     const static long _updateDelay = 100;
-    const static long _delayBeforeDimming = 10000;
+    const static long _delayBeforeDimming = 60000;
 };
 
 #endif

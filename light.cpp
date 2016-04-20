@@ -8,6 +8,7 @@ Light::Light( ) {
   pinMode( this->_greenPin, OUTPUT );
   pinMode( this->_bluePin, OUTPUT );
   pinMode( this->_statusPin, OUTPUT );
+  // this pullup to be removed?
   pinMode( this->_buttonPin, INPUT_PULLUP );
 
   this->_backLightCurrent = 255;
@@ -28,7 +29,7 @@ void Light::SwitchOn( ) {
   this->_blueCurrent = 255;
 
   // first lastupdate will be in the future to enable smooth delay
-  this->_timeOfLastUpdate = millis( ) + this->_updateDelay;
+  this->_timeOfLastUpdate = millis( ) + this->_delayBeforeDimming;
 }
 
 void Light::Update( ) {
