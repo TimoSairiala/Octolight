@@ -1,5 +1,5 @@
 # Octolight
-This is a smart night light I have done for me kids.
+This is a smart night light I have done for my kids.
 
 It has two separate modules
 a) under bed unit with RBG leds and motion sensor
