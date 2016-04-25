@@ -8,10 +8,15 @@ void setup() {
   Serial.println( "Welcome to Oktovalo" );
   oktovalo = new Light( );
   switchLightsOn = 1;
+
   // interrupt 0 equals to input pin 2 on uno and mini
   // see http://arduino.cc/en/Reference/attachInterrupt
+
+  // int0 will have the push button
   attachInterrupt( 0, lightsOn, CHANGE );
 
+  // int1 will have motion detector
+  attachInterrupt( 1, lightsOn, RISING );
 }
 
 void loop() {
